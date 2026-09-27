@@ -1,6 +1,6 @@
 import cv2
 
-path = r"C:\Users\Shash\Pictures\tzLab1\1-1.jpg"
+path = r"D:\Main\Pituxon\zren\pictures\tzLab1\1-1.jpg"
 
 img = cv2.imread(path,flags=cv2.IMREAD_COLOR)
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

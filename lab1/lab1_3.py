@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-path = r"C:\Users\Shash\Pictures\tzLab1\1-2.jpg"
+path = r"D:\Main\Pituxon\zren\pictures\tzLab1\1-2.jpg"
 
 img = cv2.imread(path)
 

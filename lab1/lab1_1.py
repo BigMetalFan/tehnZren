@@ -3,7 +3,7 @@ import cv2
 def calc_next_time(time):
     return 4000 if time + 2000 > 11000 else time + 2000
 
-path = r"C:\Users\Shash\Pictures\lisa.jpg"
+path = r"D:\Main\Pituxon\zren\pictures\tzLab1\1-1.jpg"
 
 img = cv2.imread(path,flags=cv2.IMREAD_COLOR)
 gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)

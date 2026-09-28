@@ -12,15 +12,23 @@ resized_gray_img = cv2.resize(gray_img, (0, 0), fx=0.25, fy=0.25, interpolation=
 b, g, r = cv2.split(img)
 swapped_img = cv2.merge([b, r, g])
 
-imageList = [img, gray_img, resized_img, resized_gray_img, swapped_img]
+imageList = [img, gray_img, resized_img, resized_gray_img, swapped_img ] 
 
 time = 5000
 
-for image in imageList:
+for i, image in enumerate(imageList):
     window = cv2.namedWindow("window",flags=cv2.WINDOW_AUTOSIZE )
     cv2.imshow("window", image)
-    cv2.waitKey(time)
-    time = calc_next_time(time)
-    cv2.destroyWindow("window")
+    if(i != len(imageList)-1):
+        cv2.waitKey(time)& 0xFF == 27
+        time = calc_next_time(time)
+        cv2.destroyWindow("window")
+    else:
+        while time>0:
+            if cv2.waitKey(1) & 0xFF == 27:
+                break
+            else: time -= 1
+        cv2.destroyWindow("window")
+
 
 

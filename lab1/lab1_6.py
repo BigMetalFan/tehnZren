@@ -1,6 +1,6 @@
 import cv2
 
-path = r"D:\Main\Pituxon\zren\pictures\tzLab1\1-5.jpg"
+path = r"..\pictures\tzLab1\1-5.jpg"
 
 img = cv2.imread(path,flags=cv2.IMREAD_COLOR)
 

@@ -25,7 +25,7 @@ for i, image in enumerate(imageList):
         cv2.destroyWindow("window")
     else:
         while time>0:
-            if cv2.waitKey(1) & 0xFF == 27:
+            if cv2.waitKey(1) == 27:
                 break
             else: time -= 1
         cv2.destroyWindow("window")

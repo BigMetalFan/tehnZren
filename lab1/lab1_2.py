@@ -16,6 +16,8 @@ windowAuto = cv2.namedWindow("windowAuto",flags=cv2.WINDOW_AUTOSIZE )
 
 
 cv2.imshow("window", thresh_img)
+
+
 cv2.imshow("windowA", adaptive_tresh_img)
 cv2.imshow("windowAuto", auto_tresh_img)
 cv2.waitKey(0)

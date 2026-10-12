@@ -9,7 +9,7 @@ img_inverted = cv2.bitwise_not(img)
 openWindow = cv2.namedWindow("openWindow",flags=cv2.WINDOW_AUTOSIZE )
 
 
-openImg = cv2.morphologyEx(img_inverted, cv2.MORPH_OPEN, np.ones((30, 30), np.uint8),iterations=1)
+openImg = cv2.morphologyEx(img_inverted, cv2.MORPH_OPEN, np.ones((2, 2), np.uint8),iterations=1)
 
 openImg = cv2.bitwise_not(openImg)
 cv2.imshow("openWindow", openImg)

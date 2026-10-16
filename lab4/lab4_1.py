@@ -10,9 +10,12 @@ sobelImgs = [cv2.Sobel(img, cv2.CV_32F, 1, 1, 3, 1) for img in greyimgs]
 laplasImgs = [cv2.Laplacian(img, cv2.CV_32F, 3, 1) for img in greyimgs]
 
 for img in sobelImgs:
-    cv2.imshow("Sobel "+str(img), img)
+    cv2.imshow("Sobel "+str(id(img)), img)
+    cv2.imwrite("lab4/Sobel"+str(id(img))+".jpg",cv2.convertScaleAbs(img))
 
 for img in laplasImgs:
-    cv2.imshow("Laplas "+str(img), img)
+    cv2.imshow("Laplas "+str(id(img)), img)
+    cv2.imwrite("lab4/Laplas"+str(id(img))+".jpg",cv2.convertScaleAbs(img))
+
 
 cv2.waitKey(0)

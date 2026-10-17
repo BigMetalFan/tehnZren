@@ -7,6 +7,7 @@ path = r".\pictures\tzLab3\2-1.jpg"
 img = cv2.imread(path,flags=cv2.IMREAD_COLOR)
 
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+ret, img = cv2.threshold(img,100, 255, cv2.THRESH_BINARY)
 
 openWindow = cv2.namedWindow("openWindow",flags=cv2.WINDOW_AUTOSIZE )
 closeWindow = cv2.namedWindow("closeWindow",flags=cv2.WINDOW_AUTOSIZE )
@@ -20,14 +21,14 @@ def closing(img, sizex, sizey, iterations):
     workimg = cv2.erode(workimg,kernel,iterations=iterations)
     return cv2.bitwise_not(workimg)
 
-def oppening(img, sizex, sizey, iterations):
+def opening(img, sizex, sizey, iterations):
     kernel = np.ones((sizex, sizey), np.uint8)
     workimg = cv2.bitwise_not(img)
     workimg = cv2.erode(workimg,kernel,iterations=iterations)
     workimg = cv2.dilate(workimg,kernel, iterations=iterations)
     return cv2.bitwise_not(workimg)
     
-openImg = oppening(img, 5, 5, 1)
+openImg = opening(img, 3, 3, 1)
 closeImg = closing(img, 5, 5, 1)
 
 cv2.imwrite('result_opening.jpg', openImg)

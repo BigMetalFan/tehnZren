@@ -13,4 +13,5 @@ openImg = cv2.morphologyEx(img_inverted, cv2.MORPH_OPEN, np.ones((2, 2), np.uint
 
 openImg = cv2.bitwise_not(openImg)
 cv2.imshow("openWindow", openImg)
+cv2.imwrite("lab3/morph"+str(id(img))+".jpg",openImg)
 cv2.waitKey(0)

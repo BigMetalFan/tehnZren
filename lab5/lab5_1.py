@@ -51,7 +51,7 @@ circles = findCircles(contours)
 for i in squares:
     cv2.drawContours(img, contours, i, (0, 0, 255), 2)
 for i in triangels:
-    cv2.drawContours(img, contours, i, (0, 255, 0), 2)
+    cv2.drawContours(img, contours, i, (255, 0, 255), 2)
 for i in circles:
     cv2.drawContours(img, contours, i, (255, 0, 0), 2)
 

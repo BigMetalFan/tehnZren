@@ -9,6 +9,7 @@ gray_img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY);
 
 def isXAngle(n, contour):
     perimeter = cv2.arcLength(contour, True)
+    if cv2.contourArea(contour)<100: return False
     epsilon = 0.04 * perimeter
     approx = cv2.approxPolyDP(contour, epsilon, True)
     return len(approx) == n

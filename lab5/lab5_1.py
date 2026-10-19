@@ -42,7 +42,7 @@ def findCircles(contours):
 ret, thresh_img = cv2.threshold(gray_img,100, 255, cv2.THRESH_BINARY_INV)
 
 contours, hierarchy =  cv2.findContours(thresh_img,cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_SIMPLE) 
-
+print(hierarchy)
 
 squares = findSquares(contours)
 triangels = findTriangels(contours)

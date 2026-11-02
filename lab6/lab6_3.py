@@ -15,7 +15,6 @@ for i, path in enumerate(paths):
     img = cv2.imread(path,flags=cv2.IMREAD_COLOR)
     blur_img = cv2.medianBlur(img, 101)
     gray_img = cv2.cvtColor(blur_img, cv2.COLOR_BGR2GRAY)
-    #cv2.namedWindow("circles1",flags=cv2.WINDOW_AUTOSIZE)
 
     circles = circles = cv2.HoughCircles(
         cv2.bitwise_not(gray_img),
@@ -27,7 +26,7 @@ for i, path in enumerate(paths):
         minRadius=250,
         maxRadius=800,
     )
-    draw_circles(circles, img)
+    draw_circles(circles, img, thickness= 5)
 
     #cv2.imshow('circles1', img)
     cv2.imwrite("circles"+str(i)+".jpg",img)

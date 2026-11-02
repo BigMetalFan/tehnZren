@@ -60,5 +60,5 @@ draw_line_P(find_largest(lines),openImg2)
 draw_circle(find_largest_circle(circles),openImg2)
 
 cv2.imshow('Linii2', openImg2)
-#cv2.imwrite("Linii12"+".jpg",img)
+cv2.imwrite("Linii12"+".jpg",openImg2)
 cv2.waitKey(0)

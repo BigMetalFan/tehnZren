@@ -37,9 +37,7 @@ sampleId = find_deepest(hierarchy)
 
 sample = cv2.moments(contours[find_deepest(hierarchy)])
 
-#sampleHu = cv2.HuMoments(sample)
 sampleLH = log_hu(sample)
-print(sampleLH)
 cv2.drawContours(img, contours, sampleId, (0, 0, 255), 2)
 similar = []
 
@@ -50,7 +48,8 @@ for i, contour in enumerate(contours):
     currentMomentsHu = cv2.HuMoments(currentMoments)
     currentMomentsLH = log_hu(currentMoments)
     if abs((currentMomentsLH[3] - sampleLH[3])/sampleLH[3])<0.1:
-        similar.append(i)
+        if(abs((currentMoments['nu11'] - sample['nu11'])/sample['nu11'])>60):
+            similar.append(i)
 
 for i in similar:
     cv2.drawContours(img, contours, i, (0, 0, 0), 2)

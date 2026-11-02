@@ -47,9 +47,10 @@ for i, contour in enumerate(contours):
     currentMoments = cv2.moments(contour)
     currentMomentsHu = cv2.HuMoments(currentMoments)
     currentMomentsLH = log_hu(currentMoments)
-    if abs((currentMomentsLH[3] - sampleLH[3])/sampleLH[3])<0.1:
-        if(abs((currentMoments['nu11'] - sample['nu11'])/sample['nu11'])>60):
-            similar.append(i)
+    if(abs((currentMoments['m00'] - sample['m00'])/sample['m00'])<0.1):
+        if abs((currentMomentsLH[1] - sampleLH[1])/sampleLH[1])<0.2:
+            if(abs((currentMoments['nu11'] - sample['nu11'])/sample['nu11'])>60):
+                similar.append(i)
 
 for i in similar:
     cv2.drawContours(img, contours, i, (0, 0, 0), 2)
